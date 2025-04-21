@@ -142,9 +142,11 @@ header nav ul li{
     font-weight: 700;
 }
 .subtitulos{
-    color:var(--main-text-color);
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--main-text-color);
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /******PAGINAS******/
@@ -200,19 +202,12 @@ header nav ul li{
 /*Servicios*/
 
 #servicios{
- height: 50vh;
+ height: 80vh;
  margin-top: 50px;
 }
 
-#servicios h2{
-    font-weight: 800;
-    color: var(--text-color-secondary);
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 20px;
-}
-
 .servicioscontainer{
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -249,10 +244,8 @@ header nav ul li{
     justify-content: center;
     flex-direction: column;
 }
-#nosotros h2{
-    margin-bottom: 20px;
-    color: var(--main-text-color);
-}
+
+
 #nosotros p{
     padding: 30px 30px;
     background: var(--main-text-color);
@@ -260,6 +253,7 @@ header nav ul li{
     color: var(--main-color);
     width: 70%;
     margin-top: 30px;
+    margin-bottom: 100px;
 
 }
 #nosotros img{
@@ -279,12 +273,17 @@ header nav ul li{
 }
 .cat-info{
     text-align: center;
-    background-color:var(--main-text-color);
-    color: var(--main-color);
+    color: var(--main-text-color);
+    font-size: 18px;
+    border-radius: 8px;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
    
 }
 .catalogo{
-    background-color:var(--main-text-color);
     display: grid;
     height: 80vh;
     margin-top: 50px;
@@ -310,11 +309,17 @@ header nav ul li{
     
     
 }
+.catalogo .cat-sec-1 h2{
+    color: var(--text-color-secondary);
+}
+.catalogo .cat-sec-1 p{
+    color: var(--text-color-secondary);
+}
 .catalogo .cat-sec-2{
     grid-area: sec2;
     padding: 10px 20px;
-    
-    
+    background-color: var(--main-text-color);
+    border-radius: 8px;
 
 }
 .catalogo .cat-sec-2 p{
@@ -361,6 +366,41 @@ header nav ul li{
 
 
 /*CONTACTO*/
+.redes{
+    margin: 70px 70px;
+    text-align: center;
+    height: 10vh;
+    border-radius: 8px;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.redes h3{
+    color: var(--main-text-color);
+}
+.redes p{
+    font-size: medium;
+    color: var(--main-text-color);
+}
+
+#contactos{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 20px 15px ;
+    height: 100vh;
+  
+}
+#contactos .ubi{
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+
 /*FORO*/
 
  .caja{
