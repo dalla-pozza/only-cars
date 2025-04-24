@@ -56,8 +56,11 @@ header span{
 }
 header .container-logo{
     display: flex;
-}
 
+}
+.container-logo img{
+    border-radius: 4px;
+}
 /*Nav*/
 
 .navbar1{
@@ -116,6 +119,7 @@ header nav ul li{
     bottom: 20px;
     right: 15px;
     width: 40px;
+    border-radius: 4px;
   }
   footer .formulario{
     display: flex;
@@ -147,6 +151,7 @@ header nav ul li{
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    text-transform: uppercase;
 }
 
 /******PAGINAS******/
@@ -343,16 +348,34 @@ header nav ul li{
 
 /***COMPRAMOSTUAUTO***/
 
-.com{
-    height: 100vh;
-    margin-top: 100px;
+.compracontainer{
+    height: 30vh;
+    color: var(--main-text-color);
+    font-style: italic;
+    text-align: center;
+
 }
-
-
-
-
-
-
+.titulo-com{
+    margin-top: 90px; 
+}
+.compra-inf{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.compra-inf section{
+    width: 40%;
+    color: var(--main-color);
+    background-color: var(--main-text-color);
+    border-radius: 8px;
+    text-align: center;
+    margin: 30px 15px;
+    min-width: 300px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -433,10 +456,15 @@ header nav ul li{
     
 }
 .testimonios article img{
-    width: 200px;
+    width: 70px;
+    border-radius: 7%;
 }
 
+.clientes{
+    display: flex;
+    text-align: center;
 
+}
 
 
 
