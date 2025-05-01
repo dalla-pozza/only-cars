@@ -18,11 +18,48 @@
 body{
     font-family: "Roboto Flex", sans-serif; 
     background-color: var(--main-color);
+  
 }
- 
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header    header     header    header"
+    "navbar    navbar     navbar    navbar"
+    "banner    banner     banner    banner"
+    "servicos  servicios  servicios servicios"
+    "nosotros  nosotros   nosotros  nosotros"
+    "footer    footer     footer    footer" ;
+    grid-template-columns:1fr 100% auto 1fr;
+    grid-template-rows:60px 100px 1fr 1fr 1fr auto  ;
+
+}
+.cat-grid{
+    display: grid;
+    grid-template-areas: 
+    "header     header         header     header "
+    "navbar     navbar         navbar     navbar "
+    "cat-banner cat-banner     cat-banner cat-banner"
+    "cat-banner cat-banner     cat-banner cat-banner"
+    "cat-banner cat-banner     cat-banner cat-banner"
+    "footer     footer         footer      footer ";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:60px 100px 1fr 1fr 1fr auto ;
+}
+.cont-grid{
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "navbar navbar navbar navbar"
+    "redes  redes  redes  redes"
+    "redes  redes  redes  redes"
+    "contactos contactos contactos contactos"
+    "footer     footer   footer    footer " ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:60px 150px auto auto;
+}
 a{
     text-decoration: none;
-    color:var(--main-color);
+    color:var(--text-color-secondary);
     font-weight: 300;
 }
 ul{
@@ -45,6 +82,7 @@ header{
     width: 100%;
     position: fixed;
     top: 0;
+    grid-area:header ;
 }
 header a{
     text-decoration: none;
@@ -62,20 +100,27 @@ header .container-logo{
     border-radius: 4px;
 }
 /*Nav*/
-
-.navbar1{
-    background-color:var(--main-text-color);
+.navbar{
+    grid-area: navbar;
+    color:var(--main-color-secondary);
+    background-color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
- 
-header nav ul{
+.navbar ul{
    display: flex;
    justify-content: center;
    text-align: center;
-
+   color: var(--text-color-secondary) ;
+   flex-direction: ;
+   
 }
-
-header nav ul li{
- margin:0 15px;
+.navbar ul li {
+ margin: 5px;
+}
+nav ul li{
+ color: var(--text-color-secondary);
 }
 /*main*/
 
@@ -86,24 +131,32 @@ header nav ul li{
     background-color:var(--main-text-color);
     color: var(--main-color);
     text-align: center;
-    height: 200px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-   }
+    grid-area: footer;
 
+   }
+   footer div{
+
+   }
    footer a{
     color: var(--main-color);
     font-size: 17px;
    }
-  .navbar1{
-     font: size 20px;;
-     width: 30%;
-     
-  }
+  
+   footer .navbar-footer{
+    flex-direction: column;
+   }  
+  
   .ul-footer{
     min-width: 180px;
     color: var(--main-color);
+    flex-direction: column;
+  }
+  .ul-footer li{
+    margin: 5px;
   }
   .utiles li{
     color: var(--main-color);
@@ -156,7 +209,6 @@ header nav ul li{
 
 /******PAGINAS******/
 /***HOME***/
-
 /*Banner*/
 #banner{
   
@@ -167,6 +219,7 @@ header nav ul li{
     justify-content:space-evenly;
     align-items: center;
     padding: 0 30px;
+    grid-area: banner;
 }
 .bannerleft{
  
@@ -209,6 +262,11 @@ header nav ul li{
 #servicios{
  height: 80vh;
  margin-top: 50px;
+ grid-area: servicios;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
 }
 
 .servicioscontainer{
@@ -239,7 +297,7 @@ header nav ul li{
 /*sobre nosotros*/
 
 #nosotros{
-    
+    grid-area: nosotros;
     padding: 20px;
     width: 100%;
     height: 70vh;
@@ -272,9 +330,9 @@ header nav ul li{
 /***CATALOGO***/
 
 .cat-banner{
-    height: 100vh;
+    height: 150vh;
     margin: 70px;
-    
+    grid-area: cat-banner;
 }
 .cat-info{
     text-align: center;
@@ -286,16 +344,16 @@ header nav ul li{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+    grid-area: cat-info;
 }
 .catalogo{
+    
     display: grid;
-    height: 80vh;
+    height: 100vh;
     margin-top: 50px;
     width: 100%;
     border-radius: 10px;
-    padding: 20px 10px;
-    padding-left: 50px;
+    margin-bottom: 100px;
     grid-template-areas: 
     "sec2 sec1 sec1 sec1"
     "sec2 sec1 sec1 sec1"
@@ -336,6 +394,11 @@ header nav ul li{
 .autos{
     width: 40%;
     color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
 
 }
 .autos img{
@@ -384,6 +447,7 @@ header nav ul li{
 
 /*CONTACTO*/
 .redes{
+    grid-area: redes;
     text-align: center;
     height: 50vh;
     border-radius: 8px;
@@ -402,6 +466,7 @@ header nav ul li{
 }
 
 #contactos{
+    grid-area: contactos;
     display: flex;
     align-items: center;
     margin-top: 70px;
@@ -475,125 +540,135 @@ header nav ul li{
 
 
 /*Hasta 1024px*/
-@media screen and  (max-width: 1024px ) {
+@media screen and  (max-width: 1020px ) {
     
+    #contactos{
+        margin: 100px 0;
+        flex-direction: column-reverse;
+    }
+    .cat-grid{
+    display: grid;
+    grid-template-areas: 
+    "header     header         header     header "
+    "navbar     navbar         navbar     navbar "
+    "cat-banner cat-banner     cat-banner cat-banner"
+    "cat-banner cat-banner     cat-banner cat-banner"
+    "footer     footer         footer      footer ";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:60px 100px 1fr 1fr auto;
+    }
+
+    .cat-banner{
+        margin-bottom: 100px;
+    }
+    .catalogo{
+    padding-left: 0;   
+    grid-template-areas: 
+    "sec2   sec2"
+    "sec1   sec1"
+    "sec1   sec1"
+    "sec1   sec1";
+    grid-template-columns:auto auto ;
+    grid-template-rows:  auto auto auto auto ;
+    }
    
 }
-/*hasta 610px*/
+
 @media screen  and (max-width:610px){
     
-    
-    .header{
-        height:50vh;
-    }
-    /*index*/
+   /*index*/
     #banner{
-        color:var(--main-text-color);
-        font-weight: 700;
-        height: 100vh;
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-        padding: 0 30px;
         flex-direction: column;
-        margin-top: 50px;
     }
-    #servicios .servicioscontainer{
-        display: flex;
-        justify-content: space-around;
+    .servicioscontainer{
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        margin: 20px;
-        
-        
     }
-    #servicios{
-       
-        height: 50vh;
-        margin-top: 50px;
-        margin-bottom: 600px;
-            
+    #servicios .servicio{
+        width: 90%;
+        margin-bottom: 20px;
+
     }
-    .servicio{
-        margin: 20px;
-    }
-    .nosotros{
-        margin-bottom: 160px;
-        height: 70vh;
+    #nosotros{
+        margin: 200px 0;
+
     }
     /*catalogo*/
-
-    .catalogo{
-        display: grid;
-        height: 80vh;
-        margin-top: 50px;
-        width: 100%;
-        border-radius: 10px;
-        padding: 20px 10px;
-        padding-left: 50px;
-        grid-template-areas: 
-        "sec2 sec2 sec2"
-        "sec2 sec2 sec2"
-        "sec1 sec1 sec1"
-        "sec1 sec1 sec1"
-        "sec1 sec1 sec1";
-        grid-template-columns:300px 1fr 1fr  ;
-        grid-template-rows:  auto 1fr 1fr ;
+    .grid-container{
+       
+        grid-template-areas:
+        "header    header     header    header"
+        "navbar    navbar     navbar    navbar"
+        "banner    banner     banner    banner"
+        "servicos  servicios  servicios servicios"
+        "nosotros  nosotros   nosotros  nosotros"
+        "footer    footer     footer    footer" ;
+        grid-template-columns:1fr 100% auto 1fr;
+       
     }
-
-    footer{
-        display: flex;
-        background-color:var(--main-text-color);
-        color: var(--main-color);
-        text-align: center;
-        height: 50vh;
-        justify-content: space-between;
-        align-items: center;
+    .catalogo{
+        padding: 0;
+        margin-bottom: 900px;
+    }
+    .cat-banner{
+        margin-bottom: 700px;
+    }
+    .cat-sec-1{
         flex-wrap: wrap;
-        margin-top: 200px;
-        width: 100%;
+        flex-direction: column;
     }
 }   
-/*hasta 400px*/   
-@media screen  and (max-width:410px){
-    /*index*/
-    #banner{
-        color:var(--main-text-color);
-        font-weight: 700;
-        height: 100vh;
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-        padding: 0 30px;
-        flex-direction: column;
-        margin-top: 90px;
+   
+
+
+
+/*hasta 550px*/   
+@media screen  and (max-width:550px){
+   #nosotros{
+    margin-top: 300px 0;
+    margin-bottom: 500px;
+   }
+   #nosotros p{
+    width: 100%;
+   }
+   /*catalogo*/
+   .catalogo{
+    padding-left: 0; 
+  
+    grid-template-areas: 
+    "sec2 "
+    "sec1 "
+    "sec1 "
+    "sec1 ";
+    grid-template-columns:auto  ;
+    grid-template-rows:  auto auto auto auto ;
     }
-
-
-
-    #servicios .servicioscontainer{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        margin-bottom: 150px;
-      
-        
+   .cat-banner{
+    margin-bottom: 1200px;
+   }
+   .cat-info{
+    margin-top: 150px;
+    margin-bottom: 160px;
+   }
+   footer div{
+    width: 45%;
+    margin: 10px;
+   }
+   footer{
+    flex-direction: column-reverse;
+   }
+}
+@media screen and (max-width:400px) {
+  
+    .cat-grid{
+    grid-template-areas: 
+    "header        "
+    "navbar          "
+    "cat-banner"
+    "cat-banner "
+    "footer    ";
+    grid-template-rows: 60px 100px 1fr 1fr auto;
     }
-
-
-    #nosotros{
-        margin-top: 350px;
-        height: 150vh;
-    }
-
     
-    footer{
-       height: 80vh;
-       margin-top: 80px; 
-       flex-direction: column-reverse;
-       padding: 5px;
-    }
-
 }
